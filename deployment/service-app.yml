@@ -1,0 +1,19 @@
+# declare a service object
+apiVersion: v1
+kind: Service
+metadata:
+  name: app-deploy-svc
+  labels:
+    app: app-apache
+    version: v1.1
+    env: prod
+# define and configure service to acces 80 port
+spec:
+  type: NodePort
+  ports:
+  - port: 8080
+    nodePort: 32403
+    protocol: TCP
+  
+  selector:
+    env: prod

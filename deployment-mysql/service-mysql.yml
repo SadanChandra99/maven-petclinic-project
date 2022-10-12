@@ -1,0 +1,19 @@
+# declare a service object
+apiVersion: v1
+kind: Service
+metadata:
+  name: mysql-svc-mysql
+  labels:
+    app: app-apache
+    version: v1.1
+    env: mysql
+# define and configure service to acces 80 port
+spec:
+  type: NodePort
+  ports:
+  - port: 3306
+    nodePort: 32404
+    protocol: TCP
+  
+  selector:
+    env: mysql

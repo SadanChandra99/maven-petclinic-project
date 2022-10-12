@@ -1,0 +1,13 @@
+FROM mysql:5.7.8
+
+ENV MYSQL_ROOT_PASSWORD=petclinic
+
+ENV MYSQL_DATABASE=petclinic
+
+ENV MYSQL_USER root
+
+ENV MYSQL_PASSWORD petclinic
+
+EXPOSE 3306 33060
+
+CMD ["mysqld"]
